@@ -18,7 +18,15 @@ const Home = () => {
       </header>
       <main>
         {session ? (
-          <p>Account page will go here.</p>
+          <div>
+            <button
+              onClick={() => {
+                supabase.auth.signOut();
+              }}
+            >
+              Sign out
+            </button>
+          </div>
         ) : (
           <Auth
             supabaseClient={supabase}
