@@ -13,13 +13,14 @@ const Home = () => {
         <meta name="description" content="Provest" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header>
-        <h1 className="text-3xl font-bold underline">Provest</h1>
+      <header className="m-2">
+        <h1 className="text-3xl font-bold">Provest</h1>
       </header>
-      <main>
+      <main className="max-w-3xl mx-auto">
         {session ? (
           <div>
             <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               onClick={() => {
                 supabase.auth.signOut();
               }}
@@ -28,11 +29,7 @@ const Home = () => {
             </button>
           </div>
         ) : (
-          <Auth
-            supabaseClient={supabase}
-            appearance={{ theme: ThemeSupa }}
-            theme="dark"
-          />
+          <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />
         )}
       </main>
     </div>
