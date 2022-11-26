@@ -2,6 +2,7 @@ import { useSession } from "@supabase/auth-helpers-react";
 import Head from "next/head";
 import { Header } from "../components/organisms/header";
 import { LoginForm } from "../components/organisms/login-form";
+import { Practices } from "../components/organisms/practices";
 
 const Home = () => {
   const session = useSession();
@@ -14,7 +15,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>{!session && <LoginForm />}</main>
+      <main>{session ? <Practices /> : <LoginForm />}</main>
     </div>
   );
 };

@@ -11,6 +11,7 @@ export const Header = () => {
       <div className="flex-1" />
       {!!session && (
         <Button
+          type="button"
           onClick={() => {
             supabase.auth.signOut();
           }}
